@@ -10,8 +10,7 @@ class Artiste(models.Model):
 
 class Morceau(models.Model):
     titre = models.CharField(max_length=64)
-    artiste=models.CharField(max_length=64)
-    artiste_fk = models.ForeignKey(Artiste,on_delete=models.CASCADE,null=True)
+    artiste = models.ForeignKey(Artiste,on_delete=models.CASCADE,null=True)
     def __str__(self):
         return'{self.titre} ({self.artiste})'.format(self=self)
 
