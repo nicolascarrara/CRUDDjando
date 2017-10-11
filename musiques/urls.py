@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^ajout', MorceauCreateView.as_view(), name='morceau-ajout'),
     url(r'^liste', MorceauListView.as_view(), name='morceau-liste'),
     url(r'^update/(?P<pk>\d+)', MorceauUpdate.as_view(), name='morceau-update'),
-    #url(r'^$',views.liste,name='liste'),
+    url(r'^$', MorceauListView.as_view(), name='morceau-liste'),
 ]
