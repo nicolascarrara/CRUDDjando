@@ -1,2 +1,7 @@
-<h1>Detail morceau : {{object.titre}} </h1>
-Artiste = {{object.artiste.nom}}
+{% extends 'musiques/baseModele.html' %}
+
+    {% block contenu %}
+        <h1>Detail morceau : {{object.titre}} </h1>
+        Artiste = {{object.artiste.nom}}
+    {% endblock %}
+
