@@ -1,0 +1,7 @@
+{% extends 'musiques/baseModele.html' %}
+
+    {% block contenu %}
+        <h1>Detail artiste : {{object.nom}} </h1>
+        <a href="{% url 'artiste-update' pk=object.id %}"></a>
+    {% endblock %}
+

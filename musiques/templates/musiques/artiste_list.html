@@ -1,0 +1,9 @@
+{% extends 'musiques/baseModele.html' %}
+
+    {% block contenu %}
+    <ul>
+    {% for artiste in object_list %}
+        <li><a href=" {% url 'musiques:artiste-detail' pk=artiste.id %}">{{ artiste.nom }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
