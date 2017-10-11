@@ -12,6 +12,10 @@ class Artiste(models.Model):
     def __str__(self):
         return'{self.nom}'.format(self=self).encode('utf-8')
 
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('musiques:artiste-detail', args=[str(self.id)])
+
 
 class Morceau(models.Model):
     titre = models.CharField(max_length=64)
