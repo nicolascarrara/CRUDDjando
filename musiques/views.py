@@ -24,6 +24,5 @@ class MorceauCreateView(CreateView):
 
 class MorceauUpdate(UpdateView):
     model = Morceau
+    fields = ['artiste', 'titre']
     template_name_suffix = '_update'
-
-
