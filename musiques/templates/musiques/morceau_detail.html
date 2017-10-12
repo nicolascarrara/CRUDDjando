@@ -3,5 +3,6 @@
     {% block contenu %}
         <h1>Detail morceau : {{object.titre}} </h1>
         Artiste = {{object.artiste.nom}}
+        <p><a href="{% url 'musiques:morceau-liste' %}">Retour à la liste des morceaux</a></p>
     {% endblock %}
 
