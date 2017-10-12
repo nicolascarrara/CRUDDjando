@@ -1,9 +1,14 @@
 {% extends 'musiques/baseModele.html' %}
 
     {% block contenu %}
-    <ul>
+    <fieldset>Liste des morceaux</fieldset>
+    <table>
     {% for morceau in object_list %}
-        <li><a href="{% url 'musiques:morceau-detail' pk=morceau.id %}">{{ morceau.titre }} - {{ morceau.artiste.nom }}</a></li>
+        <tr>
+            <td><a href="{% url 'musiques:morceau-detail' pk=morceau.id %}">{{ morceau.titre }} - {{ morceau.artiste.nom }}</a></td>
+            <td><a href="{% url 'musiques:morceau-update' pk=morceau.id %}">Mettre à jour</a></td>
+            <td><a href="{% url 'musiques:morceau-delete' pk=morceau.id %}">Supprimer</a></td>
+        </tr>
     {% endfor %}
-    </ul>
+    </table>
 {% endblock %}

@@ -10,7 +10,7 @@ class Artiste(models.Model):
     nom = models.CharField(max_length=64)
 
     def __str__(self):
-        return'{self.nom}'.format(self=self).encode('utf-8')
+        return'{self.nom}'.format(self=self)
 
     def get_absolute_url(self):
         from django.urls import reverse

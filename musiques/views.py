@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+from django.urls import reverse
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.forms import ModelForm
-from django.views.generic import DetailView, CreateView, UpdateView, ListView
+from django.views.generic import DetailView, CreateView, UpdateView, ListView, DeleteView
 from .models import Morceau, Artiste
 from django.utils import timezone
 # Create your views here.
@@ -20,8 +20,12 @@ class MorceauDetailView(DetailView):
 
 class MorceauCreateView(CreateView):
     model = Morceau
-    fields = ['titre']
+    fields = ['titre','artiste']
 
+class MorceauDeleteView(DeleteView):
+    model = Morceau
+    def get_success_url(self):
+        return reverse('musiques:morceau-liste')
 
 class MorceauUpdate(UpdateView):
     model = Morceau
@@ -40,6 +44,10 @@ class ArtisteCreateView(CreateView):
     model = Artiste
     fields = ['nom']
 
+class ArtisteDeleteView(DeleteView):
+    model = Artiste
+    def get_success_url(self):
+        return reverse('musiques:artiste-liste')
 
 class ArtisteUpdateView(UpdateView):
     model = Artiste

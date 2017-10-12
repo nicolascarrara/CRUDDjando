@@ -1,9 +1,14 @@
 {% extends 'musiques/baseModele.html' %}
 
     {% block contenu %}
-    <ul>
+    Liste des Artistes
+    <table>
     {% for artiste in object_list %}
-        <li><a href=" {% url 'musiques:artiste-detail' pk=artiste.id %}">{{ artiste.nom }}</a></li>
+        <tr>
+            <td><a href=" {% url 'musiques:artiste-detail' pk=artiste.id %}">{{ artiste.nom }}</a></td>
+            <td><a href=" {% url 'musiques:artiste-update' pk=artiste.id %}">Mettre à jour</a></td>
+            <td><a href=" {% url 'musiques:artiste-delete' pk=artiste.id %}">Supprimer</a></td>
+        </tr>    
     {% endfor %}
-    </ul>
+    </table>
 {% endblock %}
