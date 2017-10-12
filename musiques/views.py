@@ -20,12 +20,8 @@ class MorceauDetailView(DetailView):
 
 class MorceauCreateView(CreateView):
     model = Morceau
-<<<<<<< HEAD
     fields = ['titre']
-=======
-    fields = ['artiste', 'titre']
 
->>>>>>> d7c1951894b44fad728810c936fcd329ba379c2d
 
 class MorceauUpdate(UpdateView):
     model = Morceau
@@ -36,17 +32,10 @@ class MorceauUpdate(UpdateView):
 class ArtisteListView(ListView):
     model = Artiste
 
-<<<<<<< HEAD
-class ArtisteDetailView(DetailView):
-    model = Artiste
-
-=======
 
 class ArtisteDetailView(DetailView):
     model = Artiste
 
-
->>>>>>> d7c1951894b44fad728810c936fcd329ba379c2d
 class ArtisteCreateView(CreateView):
     model = Artiste
     fields = ['nom']
