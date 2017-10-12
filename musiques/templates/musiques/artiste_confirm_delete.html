@@ -2,7 +2,7 @@
 
     {% block contenu %}
     <form action="" method="post">{% csrf_token %}
-        <p>Voulez-vous vraiment supprimer "{{ morceau.titre }}"?</p>
+        <p>Voulez-vous vraiment supprimer "{{ artiste.nom }}"?</p>
         <input type="submit" value="Confirmer" />
     </form>
 {% endblock %}
