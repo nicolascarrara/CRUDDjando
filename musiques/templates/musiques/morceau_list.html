@@ -1,9 +1,26 @@
 {% extends 'musiques/baseModele.html' %}
 
     {% block contenu %}
-    <ul>
+    <table id='listemusique'class="display" width="100%" cellspacing="0">
+            <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Artiste</th>
+                        <th>Détails</th>
+                        <th>Modification</th>
+                        <th>Suppression</th>
+                    </tr>
+                </thead>
+                <tbody>
     {% for morceau in object_list %}
-        <li><a href="{% url 'musiques:morceau-detail' pk=morceau.id %}">{{ morceau.titre }} - {{ morceau.artiste.nom }}</a></li>
+       <tr> <td>{{ morceau.titre }}</td><td>{{ morceau.artiste.nom }}</td><td><a href="{% url 'musiques:morceau-detail' pk=morceau.id %}"><span class="glyphicon glyphicon-zoom-in"></span></a></td><td><a href=""><span class="glyphicon glyphicon-pencil"></span></a></td><td><a href=""><span class="glyphicon glyphicon-remove"></span></a></td></tr>
     {% endfor %}
-    </ul>
+        </tbody>    
+    </table>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script>$(document).ready(function() {
+        $('#listemusique').DataTable();
+    } );</script>
 {% endblock %}

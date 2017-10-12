@@ -1,17 +1,19 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="fr" >
     <head>
         <meta charset="utf-8" >
-        <title>
+        <title>                
             {% block title %}
             {% endblock %}
         </title>
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     </head>
     <body>
         <header>
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <nav class="navbar navbar-expand-lg navbar-inverse bg-light">
                                     <div class="container-fluid">
                                       <div class="navbar-header">
                                         <a class="navbar-brand" href="#">Gestion Musiques <span class="glyphicon glyphicon-music"></span></a>
@@ -46,9 +48,6 @@
         <footer>
             <em>Copyright AZICKLER, NCARRARA 2017</em>
         </footer>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
     </body>
 </html>
