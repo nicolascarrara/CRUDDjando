@@ -16,7 +16,6 @@ class Artiste(models.Model):
         from django.urls import reverse
         return reverse('musiques:artiste-detail', args=[str(self.id)])
 
-
 class Morceau(models.Model):
     titre = models.CharField(max_length=64)
     artiste = models.ForeignKey(Artiste, on_delete=models.CASCADE, null=True)
