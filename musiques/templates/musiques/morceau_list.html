@@ -13,7 +13,7 @@
                 </thead>
                 <tbody>
     {% for morceau in object_list %}
-       <tr> <td>{{ morceau.titre }}</td><td>{{ morceau.artiste.nom }}</td><td><a href="{% url 'musiques:morceau-detail' pk=morceau.id %}"><span class="glyphicon glyphicon-zoom-in"></span></a></td><td><a href=""><span class="glyphicon glyphicon-pencil"></span></a></td><td><a href=""><span class="glyphicon glyphicon-remove"></span></a></td></tr>
+       <tr> <td>{{ morceau.titre }}</td><td>{{ morceau.artiste.nom }}</td><td><a href="{% url 'musiques:morceau-detail' pk=morceau.id %}"><span class="glyphicon glyphicon-zoom-in"></span></a></td><td><a href="{% url 'musiques:morceau-update' pk=morceau.id %}"><span class="glyphicon glyphicon-pencil"></span></a></td><td><a href="{% url 'musiques:morceau-delete' pk=morceau.id %}"><span class="glyphicon glyphicon-remove"></span></a></td></tr>
     {% endfor %}
         </tbody>    
     </table>
