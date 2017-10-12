@@ -20,7 +20,7 @@ class MorceauDetailView(DetailView):
 
 class MorceauCreateView(CreateView):
     model = Morceau
-    fields = ['artiste', 'titre']
+    fields = ['titre']
 
 
 class MorceauUpdate(UpdateView):
@@ -35,7 +35,6 @@ class ArtisteListView(ListView):
 
 class ArtisteDetailView(DetailView):
     model = Artiste
-
 
 class ArtisteCreateView(CreateView):
     model = Artiste
