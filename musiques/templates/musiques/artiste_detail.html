@@ -3,4 +3,6 @@
     {% block contenu %}
         <h1>Detail artiste : {{object.nom}} </h1>
         <a href="{% url 'musiques:artiste-liste' %}">Retour à la liste des artistes</a>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% endblock %}

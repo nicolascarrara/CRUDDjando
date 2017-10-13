@@ -4,5 +4,7 @@
         <h1>Detail morceau : {{object.titre}} </h1>
         Artiste = {{object.artiste.nom}}
         <p><a href="{% url 'musiques:morceau-liste' %}">Retour à la liste des morceaux</a></p>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% endblock %}
 
