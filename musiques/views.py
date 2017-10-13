@@ -60,3 +60,7 @@ class ArtisteUpdateView(UpdateView):
     model = Artiste
     fields = ['nom']
     template_name_suffix = '_update'
+
+
+def accueil(request):
+    return render(request, 'musiques/accueil.html')
