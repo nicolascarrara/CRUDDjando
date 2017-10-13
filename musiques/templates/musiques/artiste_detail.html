@@ -9,6 +9,16 @@
             <dt>Artiste :</dt>
             <dd>- {{object.nom}}</dd>
         </dl>
+        <dl>
+            <dt>Discographie :</dt>
+            {% if object.morceau_set.all %}
+                {% for morceau in object.morceau_set.all %}
+                    <dd>- {{morceau.titre}}</dd>
+                {% endfor %}
+            {% else %}
+                Cet artiste n'a pas de titres enregistrés à son nom
+            {% endif %}
+        </dl>
         <p><a class="btn btn-default" href="{% url 'musiques:artiste-liste' %}">Retour</a></p>
     </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
