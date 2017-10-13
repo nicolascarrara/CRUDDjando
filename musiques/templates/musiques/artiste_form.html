@@ -1,13 +1,19 @@
 {% extends 'musiques/baseModele.html' %}
-
+{% block title %}
+<title>Ajout d'un artiste</title>
+{% endblock %}
     {% block contenu %}
-        <h1>Ajout d'un artiste</h1>
-        <form action="" method="post">{% csrf_token %}
+        
+        <form class="text-center" action="" method="post">{% csrf_token %}
+                <h1>Ajout d'un artiste</h1>
             <div class="form-group">
                 {{ form.as_p }}
-                <input type="submit" value="Save" />
+                <input class="btn btn-success" type="submit" value="Ajouter" />
             </div>
         </form>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9c8d6142e1089113a72e5f55da510b141a992ec3
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% endblock %}

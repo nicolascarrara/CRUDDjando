@@ -1,8 +1,15 @@
 {% extends 'musiques/baseModele.html' %}
-
+{% block title %}
+<title>Suppression : {{object.titre}}</title>
+{% endblock %}
     {% block contenu %}
-    <form action="" method="post">{% csrf_token %}
+    <div class="alert alert-danger">
+            <strong>Attention !</strong> En cliquant sur confirmer vous allez effacer "{{morceau.titre}}" de la base de donnée
+          </div>
+          
+    <form class="text-center" action="" method="post">{% csrf_token %}     
         <p>Voulez-vous vraiment supprimer "{{ morceau.titre }}"?</p>
-        <input type="submit" value="Confirmer" />
+        <input class="btn btn-danger" type="submit" value="Confirmer" />
     </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {% endblock %}

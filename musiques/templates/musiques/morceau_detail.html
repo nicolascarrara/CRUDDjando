@@ -1,10 +1,29 @@
 {% extends 'musiques/baseModele.html' %}
-
+{% block title %}
+<title>Détails : {{object.titre}}</title>
+{% endblock %}
     {% block contenu %}
+<<<<<<< HEAD
         <h1>Detail morceau : {{object.titre}} </h1>
         Artiste = {{object.artiste.nom}}
         <p><a href="{% url 'musiques:morceau-liste' %}">Retour à la liste des morceaux</a></p>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% endblock %}
+=======
+    <div class="container">
+    <div class="text-center ">
+        <h1>Detail morceau : </h1>
+        <dl>
+            <dt>Titre :</dt>
+            <dd>- {{object.titre}}</dd>
+            <dt>Artiste :</dt>
+            <dd>- {{object.artiste.nom}}</dd>
+        </dl>    
+        <p><a class="btn btn-default" href="{% url 'musiques:morceau-liste' %}">Retour</a></p>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        {% endblock %}
+>>>>>>> 9c8d6142e1089113a72e5f55da510b141a992ec3
 

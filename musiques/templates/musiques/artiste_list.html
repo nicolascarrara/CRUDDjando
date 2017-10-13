@@ -1,5 +1,7 @@
 {% extends 'musiques/baseModele.html' %}
-
+{% block title %}
+<title>Liste des artistes</title>
+{% endblock %}
     {% block contenu %}
     <table id='listeartiste'class="display" width="100%" cellspacing="0">
             <thead>
@@ -12,7 +14,7 @@
                 </thead>
                 <tbody>
     {% for artiste in object_list %}
-       <tr> <td>{{ artiste.nom }}</td><td><a href=" {% url 'musiques:artiste-detail' pk=artiste.id %}">{{ artiste.nom }}</a></td><td><a href="{% url 'musiques:artiste-update' pk=artiste.id %}"><span class="glyphicon glyphicon-pencil"></span></a></td><td><a href="{% url 'musiques:artiste-delete' pk=artiste.id %}"><span class="glyphicon glyphicon-remove"></span></a></td></tr>
+       <tr> <td>{{ artiste.nom }}</td><td><a class="btn btn-info" href="{% url 'musiques:artiste-detail' pk=artiste.id %}"> Détails <span class="glyphicon glyphicon-zoom-in"></span></a></td><td><a class="btn btn-warning" href="{% url 'musiques:artiste-update' pk=artiste.id %}"> Modifier <span class="glyphicon glyphicon-pencil"></span></a></td><td><a class="btn btn-danger" href="{% url 'musiques:artiste-delete' pk=artiste.id %}"> Supprimer <span class="glyphicon glyphicon-remove"></span></a></td></tr>
     {% endfor %}
         </tbody>    
     </table>

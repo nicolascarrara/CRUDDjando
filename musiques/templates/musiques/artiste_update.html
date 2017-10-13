@@ -1,10 +1,10 @@
 {% extends 'musiques/baseModele.html' %}
 {% block title %}
-<title>Modification : {{object.titre}}</title>
+<title>Modification : {{object.nom}}</title>
 {% endblock %}
     {% block contenu %}
     <div class="text-center">
-    <h1>Modifier la musique </h1>
+     <h1>Modifier la musique </h1>
 </br>
         <form action="" method="post">{% csrf_token %}
             {{ form.as_p }}

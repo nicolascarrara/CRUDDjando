@@ -22,10 +22,13 @@ class MorceauCreateView(CreateView):
     model = Morceau
     fields = ['titre', 'artiste']
 
+
 class MorceauDeleteView(DeleteView):
     model = Morceau
+
     def get_success_url(self):
         return reverse('musiques:morceau-liste')
+
 
 class MorceauUpdate(UpdateView):
     model = Morceau
@@ -45,11 +48,15 @@ class ArtisteCreateView(CreateView):
     model = Artiste
     fields = ['nom']
 
+
 class ArtisteDeleteView(DeleteView):
     model = Artiste
+
     def get_success_url(self):
         return reverse('musiques:artiste-liste')
+
 
 class ArtisteUpdateView(UpdateView):
     model = Artiste
     fields = ['nom']
+    template_name_suffix = '_update'
