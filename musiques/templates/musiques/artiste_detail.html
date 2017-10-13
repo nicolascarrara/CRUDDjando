@@ -1,6 +1,15 @@
 {% extends 'musiques/baseModele.html' %}
-
+{% block title %}
+<title>Détails : {{object.nom}}</title>
+{% endblock %}
     {% block contenu %}
-        <h1>Detail artiste : {{object.nom}} </h1>
-        <a href="{% url 'musiques:artiste-liste' %}">Retour à la liste des artistes</a>
-    {% endblock %}
+    <div class="text-center">
+        <h1>Detail artiste : </h1>
+        <dl>
+            <dt>Artiste :</dt>
+            <dd>- {{object.nom}}</dd>
+        </dl>
+        <p><a class="btn btn-default" href="{% url 'musiques:artiste-liste' %}">Retour</a></p>
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        {% endblock %}

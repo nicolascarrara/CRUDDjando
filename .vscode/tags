@@ -12,10 +12,11 @@
 ALLOWED_HOSTS	../GestionMusiques/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
 AUTH_PASSWORD_VALIDATORS	../GestionMusiques/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:88
 Artiste	../musiques/models.py	/^class Artiste(models.Model):$/;"	kind:class	line:9
-ArtisteCreateView	../musiques/views.py	/^class ArtisteCreateView(CreateView):$/;"	kind:class	line:40
-ArtisteDetailView	../musiques/views.py	/^class ArtisteDetailView(DetailView):$/;"	kind:class	line:36
-ArtisteListView	../musiques/views.py	/^class ArtisteListView(ListView):$/;"	kind:class	line:32
-ArtisteUpdateView	../musiques/views.py	/^class ArtisteUpdateView(UpdateView):$/;"	kind:class	line:45
+ArtisteCreateView	../musiques/views.py	/^class ArtisteCreateView(CreateView):$/;"	kind:class	line:44
+ArtisteDeleteView	../musiques/views.py	/^class ArtisteDeleteView(DeleteView):$/;"	kind:class	line:48
+ArtisteDetailView	../musiques/views.py	/^class ArtisteDetailView(DetailView):$/;"	kind:class	line:40
+ArtisteListView	../musiques/views.py	/^class ArtisteListView(ListView):$/;"	kind:class	line:36
+ArtisteUpdateView	../musiques/views.py	/^class ArtisteUpdateView(UpdateView):$/;"	kind:class	line:53
 BASE_DIR	../GestionMusiques/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
 DATABASES	../GestionMusiques/settings.py	/^DATABASES = {$/;"	kind:variable	line:77
 DEBUG	../GestionMusiques/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
@@ -27,12 +28,13 @@ Migration	../musiques/migrations/0002_auto_20171005_0844.py	/^class Migration(mi
 Migration	../musiques/migrations/0003_auto_20171005_0902.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:24
 Migration	../musiques/migrations/0004_auto_20171005_0916.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:18
 Migration	../musiques/migrations/0005_auto_20171010_0853.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
-Morceau	../musiques/models.py	/^class Morceau(models.Model):$/;"	kind:class	line:19
+Morceau	../musiques/models.py	/^class Morceau(models.Model):$/;"	kind:class	line:20
 MorceauCreateView	../musiques/views.py	/^class MorceauCreateView(CreateView):$/;"	kind:class	line:21
+MorceauDeleteView	../musiques/views.py	/^class MorceauDeleteView(DeleteView):$/;"	kind:class	line:25
 MorceauDetailView	../musiques/views.py	/^class MorceauDetailView(DetailView):$/;"	kind:class	line:17
 MorceauListView	../musiques/views.py	/^class MorceauListView(ListView):$/;"	kind:class	line:13
 MorceauTestCase	../musiques/test.py	/^class MorceauTestCase(TestCase):$/;"	kind:class	line:8
-MorceauUpdate	../musiques/views.py	/^class MorceauUpdate(UpdateView):$/;"	kind:class	line:26
+MorceauUpdate	../musiques/views.py	/^class MorceauUpdate(UpdateView):$/;"	kind:class	line:30
 MusiquesConfig	../musiques/apps.py	/^class MusiquesConfig(AppConfig):$/;"	kind:class	line:7
 ROOT_URLCONF	../GestionMusiques/settings.py	/^ROOT_URLCONF = 'GestionMusiques.urls'$/;"	kind:variable	line:53
 STATIC_URL	../GestionMusiques/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:121
@@ -46,14 +48,14 @@ __init__.py	../GestionMusiques/__init__.py	1;"	kind:file	line:1
 __init__.py	../musiques/__init__.py	1;"	kind:file	line:1
 __init__.py	../musiques/migrations/__init__.py	1;"	kind:file	line:1
 __str__	../musiques/models.py	/^    def __str__(self):$/;"	kind:member	line:12
-__str__	../musiques/models.py	/^    def __str__(self):$/;"	kind:member	line:23
+__str__	../musiques/models.py	/^    def __str__(self):$/;"	kind:member	line:24
 admin.py	../musiques/admin.py	1;"	kind:file	line:1
 annuler_migrer_artiste	../musiques/migrations/0003_auto_20171005_0902.py	/^def annuler_migrer_artiste(apps, schema):$/;"	kind:function	line:21
 annuler_migrer_artiste	../musiques/migrations/0004_auto_20171005_0916.py	/^def annuler_migrer_artiste(apps, schema):$/;"	kind:function	line:15
 app_name	../musiques/urls.py	/^app_name = 'musiques'  # Encapsule les urls de ce module dans le namespace musique$/;"	kind:variable	line:4
 application	../GestionMusiques/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
 apps.py	../musiques/apps.py	1;"	kind:file	line:1
-artiste	../musiques/models.py	/^    artiste = models.ForeignKey(Artiste, on_delete=models.CASCADE, null=True)$/;"	kind:variable	line:21
+artiste	../musiques/models.py	/^    artiste = models.ForeignKey(Artiste, on_delete=models.CASCADE, null=True)$/;"	kind:variable	line:22
 dependencies	../musiques/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:12
 dependencies	../musiques/migrations/0002_auto_20171005_0844.py	/^    dependencies = [$/;"	kind:variable	line:11
 dependencies	../musiques/migrations/0003_auto_20171005_0902.py	/^    dependencies = [$/;"	kind:variable	line:26
@@ -62,24 +64,28 @@ dependencies	../musiques/migrations/0005_auto_20171010_0853.py	/^    dependencie
 field	../musiques/migrations/0002_auto_20171005_0844.py	/^            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='musiques.Artiste'),$/;"	kind:variable	line:26
 fields	../musiques/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:18
 fields	../musiques/migrations/0002_auto_20171005_0844.py	/^            fields=[$/;"	kind:variable	line:18
-fields	../musiques/views.py	/^    fields = ['artiste', 'titre']$/;"	kind:variable	line:28
-fields	../musiques/views.py	/^    fields = ['nom']$/;"	kind:variable	line:42
-fields	../musiques/views.py	/^    fields = ['nom']$/;"	kind:variable	line:47
+fields	../musiques/views.py	/^    fields = ['artiste', 'titre']$/;"	kind:variable	line:32
+fields	../musiques/views.py	/^    fields = ['nom']$/;"	kind:variable	line:46
+fields	../musiques/views.py	/^    fields = ['nom']$/;"	kind:variable	line:55
 fields	../musiques/views.py	/^    fields = ['titre', 'artiste']$/;"	kind:variable	line:23
 get_absolute_url	../musiques/models.py	/^    def get_absolute_url(self):$/;"	kind:member	line:15
-get_absolute_url	../musiques/models.py	/^    def get_absolute_url(self):$/;"	kind:member	line:26
+get_absolute_url	../musiques/models.py	/^    def get_absolute_url(self):$/;"	kind:member	line:27
+get_success_url	../musiques/views.py	/^    def get_success_url(self):$/;"	kind:member	line:27
+get_success_url	../musiques/views.py	/^    def get_success_url(self):$/;"	kind:member	line:50
 initial	../musiques/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:10
 manage.py	../manage.py	1;"	kind:file	line:1
 migrer_artiste	../musiques/migrations/0003_auto_20171005_0902.py	/^def migrer_artiste(apps, schema):$/;"	kind:function	line:7
 migrer_artiste	../musiques/migrations/0004_auto_20171005_0916.py	/^def migrer_artiste(apps, schema):$/;"	kind:function	line:7
-model	../musiques/views.py	/^    model = Artiste$/;"	kind:variable	line:33
 model	../musiques/views.py	/^    model = Artiste$/;"	kind:variable	line:37
 model	../musiques/views.py	/^    model = Artiste$/;"	kind:variable	line:41
-model	../musiques/views.py	/^    model = Artiste$/;"	kind:variable	line:46
+model	../musiques/views.py	/^    model = Artiste$/;"	kind:variable	line:45
+model	../musiques/views.py	/^    model = Artiste$/;"	kind:variable	line:49
+model	../musiques/views.py	/^    model = Artiste$/;"	kind:variable	line:54
 model	../musiques/views.py	/^    model = Morceau$/;"	kind:variable	line:14
 model	../musiques/views.py	/^    model = Morceau$/;"	kind:variable	line:18
 model	../musiques/views.py	/^    model = Morceau$/;"	kind:variable	line:22
-model	../musiques/views.py	/^    model = Morceau$/;"	kind:variable	line:27
+model	../musiques/views.py	/^    model = Morceau$/;"	kind:variable	line:26
+model	../musiques/views.py	/^    model = Morceau$/;"	kind:variable	line:31
 model_name	../musiques/migrations/0002_auto_20171005_0844.py	/^            model_name='morceau',$/;"	kind:variable	line:24
 model_name	../musiques/migrations/0005_auto_20171010_0853.py	/^                model_name='morceau',$/;"	kind:variable	line:16
 models.py	../musiques/models.py	1;"	kind:file	line:1
@@ -96,12 +102,12 @@ operations	../musiques/migrations/0004_auto_20171005_0916.py	/^    operations = 
 operations	../musiques/migrations/0005_auto_20171010_0853.py	/^    operations = [$/;"	kind:variable	line:14
 setUp	../musiques/test.py	/^    def setUp(self):$/;"	kind:member	line:9
 settings.py	../GestionMusiques/settings.py	1;"	kind:file	line:1
-template_name_suffix	../musiques/views.py	/^    template_name_suffix = '_update'$/;"	kind:variable	line:29
+template_name_suffix	../musiques/views.py	/^    template_name_suffix = '_update'$/;"	kind:variable	line:33
 test.py	../musiques/test.py	1;"	kind:file	line:1
 test_morceau_url	../musiques/test.py	/^    def test_morceau_url(self):$/;"	kind:member	line:20
 test_morceau_url_name	../musiques/test.py	/^    def test_morceau_url_name(self):$/;"	kind:member	line:14
 tests.py	../musiques/tests.py	1;"	kind:file	line:1
-titre	../musiques/models.py	/^    titre = models.CharField(max_length=64)$/;"	kind:variable	line:20
+titre	../musiques/models.py	/^    titre = models.CharField(max_length=64)$/;"	kind:variable	line:21
 urlpatterns	../GestionMusiques/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
 urlpatterns	../musiques/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
 urls.py	../GestionMusiques/urls.py	1;"	kind:file	line:1
